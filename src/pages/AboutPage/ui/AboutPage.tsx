@@ -1,9 +1,10 @@
 import { FC } from "react";
+import { useTranslation } from "react-i18next";
 
-type Props = {};
+const AboutPage: FC = () => {
+  const { t } = useTranslation("about");
 
-const AboutPage: FC = (props: Props) => {
-  return <div>About Page</div>;
+  return <div>{t("О сайте")}</div>;
 };
 
 export default AboutPage;
