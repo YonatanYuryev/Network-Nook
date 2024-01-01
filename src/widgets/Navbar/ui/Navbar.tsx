@@ -8,9 +8,9 @@ interface NavbarProps {
   className?: string;
 }
 
-export const Navbar: FC<NavbarProps> = (props) => {
+const Navbar: FC<NavbarProps> = ({ className }) => {
     const { t } = useTranslation();
-    const { className } = props;
+    const about = '/about';
 
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>
@@ -24,7 +24,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
                 </AppLink>
                 <AppLink
                     theme={AppLinkTheme.SECONDARY}
-                    to="/about"
+                    to={about}
                 >
                     {t('О сайте')}
                 </AppLink>
@@ -32,3 +32,5 @@ export const Navbar: FC<NavbarProps> = (props) => {
         </div>
     );
 };
+
+export default Navbar;
